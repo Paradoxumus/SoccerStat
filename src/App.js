@@ -4,11 +4,26 @@ import React from 'react';
 import {Box, Tab} from '@mui/material';
 import {TabList, TabContext, TabPanel} from '@mui/lab';
 import { maxWidth } from '@mui/system';
+import {getLeagues} from './API.js'
 
+import { useEffect, useState } from "react"
 
 function App() {
+  //
+  console.log(process.env.REACT_APP_API_KEY)
+  const [leagues, setLeagues] = useState([])
+  useEffect(() => {
+    const fetchDataLeagues = async () => {
+      const jsonLeagues = await getLeagues()
+      if (!jsonLeagues) return
+      console.log("🚀 ~ file: App.js ~ line 17 ~ fetchData ~ json", jsonLeagues)
+      setLeagues(jsonLeagues.competitions) 
+    }
+    fetchDataLeagues()
+  }, [])
+      //
   const [value, setValue] = React.useState('1');
-  const handleChange = (event, newValue) => {
+  const handleChange = (event, newValue) => { 
     setValue(newValue);
   };
   return (
