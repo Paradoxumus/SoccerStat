@@ -5,7 +5,7 @@ function SearchName({ query, update }) {
     return(
         <Stack direction = "row" ml={3} mt={2}>
             <TextField 
-                label="Поиск..." 
+                label="Поиск......" 
                 variant='outlined' 
                 size='small'
                 value={query}
