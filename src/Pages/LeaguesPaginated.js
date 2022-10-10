@@ -1,4 +1,4 @@
-import { Typography, Pagination, Stack } from "@mui/material"
+import {  Pagination, Stack } from "@mui/material"
 import SearchName from "../components/Search"
 import { useState } from "react"
 import LeaguesList from "../components/LeaguesList"
@@ -36,7 +36,7 @@ function LeaguesPaginated({ leagues }) {
                     shape="rounded"
                     count={pageLeagueCount}
                     page={page}
-                    
+                    onChange={handleChange}
                 />
             </Stack>
         </>
