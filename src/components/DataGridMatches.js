@@ -78,7 +78,6 @@ function DataGridMatches ({matches}){
             editable: true,
         }]
         const checkid = (check) => {
-            console.log(check)
             return check
 
         }

@@ -30,7 +30,7 @@ export const getTeams = async () => {
   }
 }
 export const getLeagueMatches = async (idLeague, dateFromLeague, dateToLeague) => {
-  const response = await fetch(`http://api.football-data.org/v2/competitions/${idLeague}/matches?dateFrom=${dateFromLeague}&dateTo=${dateToLeague}`,{
+  const response = await fetch(`https://api.football-data.org/v2/competitions/${idLeague}/matches?dateFrom=${dateFromLeague}&dateTo=${dateToLeague}`,{
     headers: {
       "x-auth-token": process.env.REACT_APP_API_KEY
     }
@@ -44,7 +44,7 @@ export const getLeagueMatches = async (idLeague, dateFromLeague, dateToLeague) =
   }
 }
 export const getTeamMatches = async (idTeam, dateFromTeam, dateToTeam) => {
-  const response = await fetch(`http://api.football-data.org/v2/teams/${idTeam}/matches?dateFrom=${dateFromTeam}&dateTo=${dateToTeam}`,{
+  const response = await fetch(`https://api.football-data.org/v2/teams/${idTeam}/matches?dateFrom=${dateFromTeam}&dateTo=${dateToTeam}`,{
     headers: {
       "x-auth-token": process.env.REACT_APP_API_KEY
     }
